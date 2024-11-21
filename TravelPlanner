@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planificateur de Voyage Numérique</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f8fc;
+            color: #333;
+            margin: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        .page {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+        .navigation {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn-nav {
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Page 1 : Couverture -->
+        <div id="page1" class="page">
+            <h1 class="text-center">Planificateur de Voyage Numérique</h1>
+            <div class="text-center">
+                <img src="https://via.placeholder.com/400x200" alt="Illustration de voyage" class="img-fluid mt-4 mb-4">
+            </div>
+            <p class="text-center">Organisez vos voyages en toute simplicité avec notre planificateur numérique.</p>
+            <p class="text-center font-italic">Proposé par : <strong>Votre nom ou marque</strong></p>
+        </div>
+
+        <!-- Page 2 : Détails du Voyage -->
+        <div id="page2" class="page hidden">
+            <h2>Détails du Voyage</h2>
+            <form>
+                <div class="form-group">
+                    <label for="destination">Destination :</label>
+                    <input type="text" class="form-control" id="destination" placeholder="Ex. : Paris">
+                </div>
+                <div class="form-group">
+                    <label for="dates">Dates :</label>
+                    <input type="date" class="form-control mb-2" id="dateDepart" placeholder="Date de départ">
+                    <input type="date" class="form-control" id="dateRetour" placeholder="Date de retour">
+                </div>
+                <div class="form-group">
+                    <label for="voyageurs">Nombre de Voyageurs :</label>
+                    <input type="number" class="form-control" id="voyageurs" placeholder="Ex. : 2">
+                </div>
+                <div class="form-group">
+                    <label for="objectif">Objectif du Voyage :</label>
+                    <textarea class="form-control" id="objectif" placeholder="Ex. : Vacances, affaires"></textarea>
+                </div>
+            </form>
+        </div>
+
+        <!-- Page 3 : Itinéraire -->
+        <div id="page3" class="page hidden">
+            <h2>Itinéraire</h2>
+            <form>
+                <div class="form-group">
+                    <label for="jour1">Jour 1 :</label>
+                    <textarea class="form-control" id="jour1" placeholder="Ex. : Arrivée à l'hôtel, visite de la ville"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="jour2">Jour 2 :</label>
+                    <textarea class="form-control" id="jour2" placeholder="Ex. : Excursion en bateau, dîner"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="jour3">Jour 3 :</label>
+                    <textarea class="form-control" id="jour3" placeholder="Ex. : Shopping, retour"></textarea>
+                </div>
+            </form>
+        </div>
+
+        <!-- Page 4 : Hébergement -->
+        <div id="page4" class="page hidden">
+            <h2>Hébergement</h2>
+            <form>
+                <div class="form-group">
+                    <label for="adresse">Adresse :</label>
+                    <input type="text" class="form-control" id="adresse" placeholder="Ex. : 10 Rue des Fleurs">
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Numéro de Téléphone :</label>
+                    <input type="tel" class="form-control" id="telephone" placeholder="Ex. : 01 23 45 67 89">
+                </div>
+                <div class="form-group">
+                    <label for="datesHebergement">Dates d'Hébergement :</label>
+                    <input type="date" class="form-control mb-2" id="dateArrivee" placeholder="Date d'arrivée">
+                    <input type="date" class="form-control" id="dateDepartHebergement" placeholder="Date de départ">
+                </div>
+            </form>
+        </div>
+
+        <!-- Page 5 : Transport -->
+        <div id="page5" class="page hidden">
+            <h2>Transport</h2>
+            <form>
+                <div class="form-group">
+                    <label for="vols">Vols :</label>
+                    <textarea class="form-control" id="vols" placeholder="Ex. : Numéro de vol, horaires"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location de Voiture :</label>
+                    <textarea class="form-control" id="location" placeholder="Ex. : Nom de l'agence, modèle"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="transports">Transports en Commun :</label>
+                    <textarea class="form-control" id="transports" placeholder="Ex. : Ligne de métro, horaires"></textarea>
+                </div>
+            </form>
+        </div>
+
+        <!-- Page 6 : Liste de Bagages -->
+        <div id="page6" class="page hidden">
+            <h2>Liste de Bagages</h2>
+            <form>
+                <div class="form-group">
+                    <label for="vetements">Vêtements :</label>
+                    <textarea class="form-control" id="vetements" placeholder="Ex. : T-shirts, pantalons"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="toilette">Articles de Toilette :</label>
+                    <textarea class="form-control" id="toilette" placeholder="Ex. : Brosse à dents, shampooing"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="documents">Documents :</label>
+                    <textarea class="form-control" id="documents" placeholder="Ex. : Passeport, billets"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="autres">Autres :</label>
+                    <textarea class="form-control" id="autres" placeholder="Ex. : Chargeur, médicaments"></textarea>
+                </div>
+            </form>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button class="btn btn-secondary btn-nav" id="prevPage" disabled>Précédent</button>
+            <button class="btn btn-primary btn-nav" id="nextPage">Suivant</button>
+        </div>
+    </div>
+
+    <script>
+        // Gestion des pages
+        const pages = document.querySelectorAll('.page');
+        let currentPage = 0;
+
+        document.getElementById('nextPage').addEventListener('click', () => {
+            if (currentPage < pages.length - 1) {
+                pages[currentPage].classList.add('hidden');
+                currentPage++;
+                pages[currentPage].classList.remove('hidden');
+            }
+            toggleButtons();
+        });
+
+        document.getElementById('prevPage').addEventListener('click', () => {
+            if (currentPage > 0) {
+                pages[currentPage].classList.add('hidden');
+                currentPage--;
+                pages[currentPage].classList.remove('hidden');
+            }
+            toggleButtons();
+        });
+
+        function toggleButtons() {
+            document.getElementById('prevPage').disabled = currentPage === 0;
+            document.getElementById('nextPage').disabled = currentPage === pages.length - 1;
+        }
+    </script>
+</body>
+</html>
